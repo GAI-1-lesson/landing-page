@@ -81,7 +81,26 @@ nav.scrolled {
     opacity: 0.7;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a.active {
+    opacity: 1;
+    color: var(--primary);
+}
+
+.lang-switch {
+    position: absolute;
+    right: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.lang-switch a {
+    text-decoration: none;
+    color: var(--text-main);
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.lang-switch a.active {
     opacity: 1;
     color: var(--primary);
 }
@@ -260,18 +279,67 @@ nav.scrolled {
     transform: translateY(0);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .products {
+/* Responsive Refinement */
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-container {
         grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    .hero-content {
+        text-align: center;
+        margin: 0 auto;
+        padding: 40px 20px;
     }
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
     }
+    .hero-image img {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
     nav {
-        padding: 20px;
+        padding: 15px 20px;
+    }
+    .logo {
+        left: 20px;
+        font-size: 1.2rem;
+    }
+    .lang-switch {
+        right: 20px;
     }
     .nav-links {
-        display: none;
+        display: none; /* Can be replaced with a hamburger menu if needed */
+    }
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    .products {
+        grid-template-columns: 1fr;
+        padding: 50px 20px;
+    }
+    .advantages {
+        padding: 50px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero p {
+        font-size: 1.1rem;
+    }
+    .cta-btn {
+        padding: 15px 30px;
+        font-size: 1rem;
     }
 }
